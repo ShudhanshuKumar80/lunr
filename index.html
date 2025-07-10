@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header"></header>
+        <div class="wrapper flex">
+            <div class="primary">
+                <main class="main">
+                    <article class="post">
+                        <div class="content post__content clearfix">
+                            <h2>How to Integrate Lunr.js with a Static Web Site</h2>
+                            <p>This CodePen demonstrates the HTML, CSS and JavaScropt presented in a blog post on my
+                                website, <a
+                                    href="https://aaronluna.dev/blog/add-search-to-static-site-lunrjs-hugo-vanillajs/"
+                                    target="_blank" rel="noopener">Add Search to Your Static Site with Lunr.js</a>.</p>
+                            <p>The only difference between the implementation that is documented in the blog post and
+                                this CodePen is related to the JSON page data file used to build the Lunr search index.
+                                In the blog post, the JSON poge data file contains the full text of all blog posts and
+                                is fetched from the static web site. For various reasons, I have hardcoded a much
+                                smaller version (roughly the first 500 words) in the JavaScript section of this CodePen.
+                            </p>
+                        </div>
+                    </article>
+                </main>
+            </div>
+            <section class="search-results hide-element">
+                <div id="search-header">
+                    <div class="search-query search-query-left">search term: <span id="query"></span></div>
+                    <div class="search-query search-query-right"><span id="results-count"></span><span
+                            id="results-count-text"></span></div>
+                </div>
+                <button id="clear-search-results-mobile" class="button clear-search-results">Clear Search
+                    Results</button>
+                <ul></ul>
+            </section>
+            <aside class="sidebar">
+                <div id="site-search">
+                    <h4><span class="underline--magical">Search</span></h4>
+                    <div class="search-flex">
+                        <form id="search-form" name="searchForm" role="form" onsubmit="return false">
+                            <div class="search-wrapper">
+                                <div class="search-container">
+                                    <i class="fa fa-search"></i>
+                                    <input autocomplete="off" placeholder="" id="search" class="search-input"
+                                        aria-label="Search site" type="text" name="q">
+                                </div>
+                                <div class="search-error hide-element"><span class="search-error-message"></span></div>
+                            </div>
+                        </form>
+                        <button id="clear-search-results-sidebar" class="button clear-search-results hide-element">Clear
+                            Search Results</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>
